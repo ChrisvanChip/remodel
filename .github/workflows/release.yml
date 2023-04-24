@@ -67,11 +67,11 @@ jobs:
         with:
           upload_url:  ${{ github.event.release.upload_url }}
           asset_path: release.zip
-          asset_name: ${{ matrix.label }}.zip
+          asset_name: 0.12.0-${{ matrix.label }}.zip
           asset_content_type: application/octet-stream
 
       - name: Upload Archive to Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ matrix.label }}.zip
+          name: 0.12.0-${{ matrix.label }}.zip
           path: release.zip
